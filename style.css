@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #1033be 0%, #5182e5 100%);
+    transition: background 0.5s ease;
+}
+
+/* Wrapper with glassmorphism */
+.wrapper {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(25, 81, 236, 0.6);
+    color: #e8e8e8;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12px);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Search bar */
+.search-container {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 2px #0053d8;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-btn {
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 8px;
+    background: #0053d8;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    background: #004fce;
+    transform: translateY(-2px);
+}
+
+/* Weather card */
+.card {
+    padding: 20px;
+    text-align: center;
+    margin-top: -10px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.img-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    filter: drop-shadow(0 5px 15px rgba(0, 180, 216, 0.4));
+    animation: bounce 2s infinite;
+}
+
+.temp {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.content {
+    margin-bottom: 20px;
+}
+
+.city-name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.weather {
+    font-size: 14px;
+    color: rgba(232, 232, 232, 0.9);
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+/* Bottom cards */
+.bottom-cards {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(33, 87, 237, 0.6);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    animation: fadeIn 1s ease;
+}
+
+.humidity,
+.wind {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.humidity img,
+.wind img {
+    width: 30px;
+    height: 30px;
+}
+
+.humidity span,
+.wind span {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Divider */
+.divider {
+    width: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Extra info */
+.extra-info {
+    margin-top: 15px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    animation: fadeInUp 1s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Error & Loading states */
+.error {
+    color: #ff6b6b;
+    font-weight: 500;
+    animation: fadeIn 0.5s ease;
+}
+
+.loading {
+    color: #ffd43b;
+    font-weight: 500;
+    animation: fadeIn 0.5s ease;
+}
+
+.info {
+    color: #a0e7e5;
+    font-weight: 500;
+    animation: fadeIn 0.5s ease;
+}
