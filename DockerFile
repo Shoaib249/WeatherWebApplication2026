@@ -1,0 +1,11 @@
+# Nginx ka light version use karein
+FROM nginx:alpine
+
+# Apni saari files ko Nginx ke default folder mein copy karein
+COPY . /usr/share/nginx/html/
+
+# Port 80 ko open karein
+EXPOSE 80
+
+# Nginx ko start karein
+CMD ["nginx", "-g", "daemon off;"]
